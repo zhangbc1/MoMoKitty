@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story | MOMOKITTY</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">MOMOKITTY</a>
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="story.html" class="active-page">Our Story</a></li>
+      <li><a href="stores.html">Stores</a></li>
+      <li><a href="contact.html" class="btn-nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="story-hero reveal">
+  <div class="container">
+    <h1 class="story-title">A BITE OF SWEETNESS,<br>INFINITE LUCK.</h1>
+    <p class="story-subtitle">Meet MOMOKITTY, a half-fruit, half-cat elf born from the intersection of ancient legends and modern sweetness.</p>
+  </div>
+</header>
+
+<section class="story-content">
+  <div class="container">
+
+    <div class="story-row reveal">
+      <div class="story-text">
+        <span class="story-tag">01 / The Origin</span>
+        <h2>The intersection of two miracles.</h2>
+        <p>In traditional folklore, the peach (Momo) is celebrated as a fairy wood that wards off evil and brings longevity, while the calico cat (Mikeneko) is revered as a spirit beast that repays kindness and attracts wealth. MOMOKITTY is the magical intersection of these two worlds—a gentle, half-fruit, half-cat elf.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-placeholder bg-pink">
+          <div class="bg-text">ORIGIN</div>
+          <div class="visual-emoji">🍑</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-row reverse reveal">
+      <div class="story-text">
+        <span class="story-tag">02 / The Magic</span>
+        <h2>Every detail heals you.</h2>
+        <p>The green leaf on its head is a delicate "mood antenna" designed to sense your unhappiness. Its winking left eye is constantly discharging electricity to the future, predicting little surprises to come. When its golden bell rings, it mimics the ancient purification ritual, turning your troubles into peach-flavored bubbles[cite: 37].</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-placeholder bg-blue">
+          <div class="bg-text">MAGIC</div>
+          <div class="visual-emoji">✨</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-row reveal">
+      <div class="story-text">
+        <span class="story-tag">03 / The Guardian</span>
+        <h2>Your exclusive Koi Cat.</h2>
+        <p>It doesn't require offerings or grand gestures; it just quietly sits on your desk, in your bag, or by the entryway. MOMOKITTY is your personal "koi cat" and ultimate pink backup. Whenever you need a little sweetness in life, it is there, forever smiling and forever supporting you.</p>
+      </div>
+      <div class="story-visual">
+        <div class="visual-placeholder bg-peach">
+          <div class="bg-text">GUARD</div>
+          <div class="visual-emoji">🐱</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="quote-section reveal delay-1">
+  <div class="container">
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <blockquote>
+        All the good luck in the world happens because of a fated encounter. We cross lightyears just to find the souls who need a little bit of sweetness.
+      </blockquote>
+      <div class="quote-author">— The MOMOKITTY Tale</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 MOMOKITTY. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const reveals = document.querySelectorAll('.reveal');
+    const observerOptions = {
+      root: null,
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    reveals.forEach(reveal => {
+      revealObserver.observe(reveal);
+    });
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOMOKITTY | Spark Joy Every Day</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">MOMOKITTY</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active-page">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="stores.html">Stores</a></li>
+      <li><a href="contact.html" class="btn-nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-content">
+    <h1 class="hero-title">SPARK JOY<br>EVERY DAY</h1>
+    <p class="hero-subtitle">Your premium destination for Asian lifestyle goods and exclusive collectibles.</p>
+    <div class="cta-group">
+      <a href=# class="btn-primary">Shop Now</a>
+      <a href="#philosophy" class="btn-secondary">Discover the Magic <span>&darr;</span></a>
+    </div>
+  </div>
+
+  <div class="hero-image-wrapper">
+    <img src="momokitty-mascot.png" alt="Momokitty Mascot" class="hero-image">
+  </div>
+</header>
+
+<section class="bento-section">
+  <div class="container">
+    <div class="bento-grid">
+
+      <a href="#" class="bento-card card-snacks reveal">
+        <div class="bg-text">YUMMY</div>
+        <div class="card-content">
+          <h2>Snacks</h2>
+          <p>Curated Asian flavors to delight your taste buds.</p>
+        </div>
+        <img src="snacks-mockup.png" alt="Snacks" class="card-img">
+      </a>
+
+      <a href=# class="bento-card card-beauty reveal delay-1">
+        <div class="bg-text">GLOW</div>
+        <div class="card-content">
+          <h2>Beauty</h2>
+          <p>Gentle skincare and cosmetics.</p>
+        </div>
+      </a>
+
+      <a href=# class="bento-card card-home reveal delay-2">
+        <div class="bg-text">CHILL</div>
+        <div class="card-content">
+          <h2>Home & Living</h2>
+          <p>Aesthetics for your personal space.</p>
+        </div>
+      </a>
+
+      <a href=# class="bento-card card-toys reveal delay-3">
+        <div class="trendy-sticker">HOT</div>
+        <div class="bg-text">LIMITED</div>
+        <div class="card-content">
+          <span class="tag">Exclusive IP</span>
+          <h2>Blind Box</h2>
+          <p>Collect the limited edition MOMOKITTY series.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="philosophy" class="philosophy-section">
+  <div class="container philosophy-grid">
+    <div class="philosophy-item reveal">
+      <h3>Healing</h3>
+      <p>your heart.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="philosophy-item reveal delay-1">
+      <h3>Lucky</h3>
+      <p>from the start.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="philosophy-item reveal delay-2">
+      <h3>Companion</h3>
+      <p>never apart.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 MOMOKITTY. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 获取所有带有 .reveal 类的元素
+    const reveals = document.querySelectorAll('.reveal');
+
+    // 设置观察器参数：当元素露出 15% 时触发
+    const observerOptions = {
+      root: null,
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 当滑到该元素时，加上 active 类
+          entry.target.classList.add('active');
+          // 动画执行一次后取消观察，避免上下滑动重复触发干扰体验
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    reveals.forEach(reveal => {
+      revealObserver.observe(reveal);
+    });
+  });
+</script>
+</body>
+</html>
